@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make it Fixx </title>
+    <title>Make it Fixx</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(90deg, #000428, #004e92);
+            background: linear-gradient(90deg, #000016, #002752);
             color: white;
-            text-align: center;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
             overflow-x: hidden;
+            height: 100vh;
+            background-image: url('https://github.com/xwmj003/MakeItFixxBackground0/blob/main/BackgroundMakeItFixx01.png?raw=true');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.051);
+            background-blend-mode: darken;
         }
         .navbar {
             display: flex;
             justify-content: space-around;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.567);
             position: fixed;
             width: 100%;
             top: 0;
@@ -96,44 +103,65 @@
 <body>
     <div class="navbar">
         <a onclick="showContent('inicio')">Inicio</a>
-        <a onclick="showContent('nosotros')">Nosotros</a>
-        <a onclick="showContent('contacto')">Contacto</a>
+        <a onclick="showContent('nosotros')">Productos</a>
+        <a onclick="showContent('contacto')">Informaciones</a>
+        <a onclick="showContent('Ayudas')"> Ayudas</a>
     </div>
     
     <section id="inicio" class="content active">
-        <h1 class="fade-in">Bienvenidos a nuestra página web Make it Fixx</h1>
+        <center>
+        <h1 class="fade-in" style="color: black; background-color: #ffa5e446;">Bienvenidos a nuestra página web </h1> 
+        <big><big><big>
+        <h1 style="color: #ab2678; font-family: Brush Script MT;" class="fade-in">Make it Fixx</h1>
+        </big></big></big>
+    </center>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p class="fade-in" style="color: black; "> Aqui tenemos las informaciones que te puede interesar. </p> 
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </section>
     
     <section id="nosotros" class="content" style="display:none;">
-        <h1 class="fade-in">Sobre Nosotros</h1>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <p class="fade-in">La pagina web aun no esta terminado </p>
+        <center>
+        <h1 class="fade-in" style="color: black;">Productos</h1>
+    </center>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p class="fade-in" style="color: black;">La página web aún no está terminada</p>
     </section>
     
     <section id="contacto" class="content" style="display:none;">
-        <h1 class="fade-in">Contacto</h1>
-        <p class="fade-in">Envíanos un mensaje a contacto@gmail.com</p>
+        <center>
+        <h1 class="fade-in" style="color: black;">Informaciones</h1>
+    </center>
+        <br><br><br>
+        <p class="fade-in" style="color: black;">Envíanos un mensaje a contacto@gmail.com</p>
     </section>
-    
-    <footer style="padding: 20px; background: rgba(0, 0, 0, 0.8); text-align: center; width: 100%;">
-        <p class="fade-in">&copy; Make it Fixx</p>
+
+    <section id="Ayudas" class="content" style="display: none;">
+        <br><br>
+        <h1 style="color: black;" class="fade-in"> Necessitas ayuda? <br></h1> 
+        <h3 style="color: black; background-color: rgba(255, 150, 241, 0.34);" class="fade-in"> Aqui tenemos algunas respuestas que le podemos ayudar.</h3>
+    </section>
+
+    <footer style="padding: 20px; background: rgba(0, 0, 0, 0.545); text-align: center; width: 100%;">
+        <p> Make it Fixx</p>
+        <p> Página web creado por XWMJ</p>
     </footer>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
-            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.2 });
+    
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
         });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-in').forEach(element => {
-        observer.observe(element);
-    });
-});
-
     </script>
 </body>
 </html>
